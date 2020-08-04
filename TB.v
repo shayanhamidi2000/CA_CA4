@@ -1,7 +1,7 @@
 module TB();
   reg clk, rst;
   
-  mips mp(.rst(rst), .clk(clk));
+  MIPS mp(.rst(rst), .clk(clk));
   
   initial begin
     rst = 1'b1;
