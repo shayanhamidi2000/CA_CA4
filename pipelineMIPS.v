@@ -1,6 +1,6 @@
 module MIPS(input rst, clk);
        
-       wire flush, jmp, PcSrc, pcWrite, write, WrReg, Brancheq, Branchneq, zeroCntrl;
+       wire flush, jmp, PcSrc, PcWrite, write, WrReg, Brancheq, Branchneq, zeroCntrl;
        wire AluSrcEX, RegDstEX, MemWrEX, MemRdEX, DataSrcEX, WrRegEX, WrRegWB, DataSrcWB;
        wire MemRdMEM, MemWrMEM, WrRegMEM, DataSrcMEM;
        wire DataSrcCU, regDstCU, regWriteCU, AluSrcCU, MemWriteCU, MemReadCU;
@@ -12,7 +12,7 @@ module MIPS(input rst, clk);
        wire[5:0] opcode, func;
        wire[2:0] AluOperation, InAluOperation, AluOperationCU;
        wire[1:0] fwSrc1, fwSrc2;
-       IF iff(.rst(rst), .clk(clk), .flush(flush), .jmp(jmp), .PcSrc(PcSrc), .pcWrite(pcWrite), .beqAdr(beqAdr), .jmpAdr(jmpAdr), .nextInstAdr(nextInstAdr), .Inst(Inst));
+       IF iff(.rst(rst), .clk(clk), .flush(flush), .jmp(jmp), .PcSrc(PcSrc), .pcWrite(PcWrite), .beqAdr(beqAdr), .jmpAdr(jmpAdr), .nextInstAdr(nextInstAdr), .Inst(Inst));
        
        IFandID ifandid(.rst(rst), .clk(clk), .write(write), .nextInstAdr(nextInstAdrOut), .ir(ir), .adrParIn(nextInstAdr), .instParIn(Inst));
 
@@ -20,7 +20,7 @@ module MIPS(input rst, clk);
 	      .PcSrc(PcSrc), .beqAdr(beqAdr), .jmpAdr(jmpAdr), .rdReg1(rdReg1), .rdReg2(rdReg2),
 	      .fwdReg1(fwdReg1), .fwdReg2(fwdReg2), .destReg(destReg), .immVal(immVal), .opcode(opcode), .func(func));
 	     
-	     assign {InAluOperation, InAluSrc, InRegDst, InMemWr, InMemRd, InDataSrc, InWrReg} = {AluOperationCU, AluSrcCU, regDstCU, MemWriteCU, MemReadCU, DataSrcCU, regWriteCU} ? zeroCntrl : 9'b0;
+	     assign {InAluOperation, InAluSrc, InRegDst, InMemWr, InMemRd, InDataSrc, InWrReg} = zeroCntrl ? {AluOperationCU, AluSrcCU, regDstCU, MemWriteCU, MemReadCU, DataSrcCU, regWriteCU}  : 9'b0;
 	     
        IDandEX idandex(.clk(clk), .rst(rst), .rg1(rg1), .rg2(rg2), .immVal(immVal2), .destReg(destReg2), .rdRg1(rdRg1), .rdRg2(rdRg2),
 	     .AluOperation(AluOperation), .AluSrc(AluSrcEX), .RegDst(RegDstEX), .MemWr(MemWrEX), .MemRd(MemRdEX), .DataSrc(DataSrcEX), .WrReg(WrRegEX),

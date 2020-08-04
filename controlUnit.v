@@ -5,7 +5,7 @@ module CUcenter(AluOp,Jmp, Brancheq, Branchneq, DataSrc, regDst, regWrite, AluSr
   input[5:0] func;
   
   always@(opcode , func)begin
-    {AluOp, Brancheq, Branchneq, DataSrc, regDst, regWrite, AluSrc, MemWrite, MemRead} = 10'b0;
+    {AluOp,Jmp, Brancheq, Branchneq, DataSrc, regDst, regWrite, AluSrc, MemWrite, MemRead} = 11'b0;
     case(opcode)
       6'b000000:begin if(func != 6'b0) {DataSrc,regDst, regWrite, AluOp} = 5'b11110; end
       6'b100011:{regWrite, AluSrc, MemRead} = 3'b111;
@@ -50,7 +50,7 @@ module controlUnit(AluOperation, Jmp, Brancheq, Branchneq, DataSrc, regDst, regW
   wire [1:0] AluOp;
   wire Brancheq, Branchneq;
   
-  CUcenter cu(.func(func) , .AluOp(AluOp), .Brancheq(Brancheq), .Branchneq(Branchneq) , .Jmp(Jmp) , .DataSrc(RegData), .regDst(regDst), .regWrite(regWrite), .AluSrc(AluSrc), .MemWrite(MemWrite), .MemRead(MemRead), .opcode(opcode));
+  CUcenter cu(.func(func) , .AluOp(AluOp), .Brancheq(Brancheq), .Branchneq(Branchneq) , .Jmp(Jmp) , .DataSrc(DataSrc), .regDst(regDst), .regWrite(regWrite), .AluSrc(AluSrc), .MemWrite(MemWrite), .MemRead(MemRead), .opcode(opcode));
   ALUcontroller alucu(.AluOp(AluOp), .func(func), .AluOperation(AluOperation));
   
 endmodule
