@@ -43,7 +43,7 @@ module MIPS(input rst, clk);
        WB wb(.data(Data1WB), .ALUres(Data0WB), .DataSrc(DataSrcWB), .Data(WBData));
 
 
-       HazardUnit hu(.PcSrc(PcSrc), .Jmp(jmp), .memRd(MemRead), .rg1(fwdReg1), .rg2(fwdReg2), .rgDstNxt(rdRg2), .zeroCntrl(zeroCntrl), .PcWrite(PcWrite), .IRWrite(write), .flush(flush));
+       HazardUnit hu(.PcSrc(PcSrc), .Jmp(jmp), .memRd(MemRdEX), .rg1(fwdReg1), .rg2(fwdReg2), .rgDstNxt(rdRg2), .zeroCntrl(zeroCntrl), .PcWrite(PcWrite), .IRWrite(write), .flush(flush));
        
        ForwardingUnit fw(.EXMEMregWr(WrRegMEM), .EXMEMrd(DestRegMEM), .IDEXrs(rdRg1), .IDEXrt(rdRg2), .MEMWBregWr(WrRegWB), .MEMWBrd(MEMWBrd),
        .src1(fwSrc1), .src2(fwSrc2));
