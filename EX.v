@@ -5,8 +5,8 @@ module EX(input[2:0] AluOperation, input[31:0] rg1, input[31:0] rg2, input[31:0]
        wire [31:0] mux1, mux2, mux3;
        wire zero;
        
-       MUX32in3 mx1(.s0(rg1) , .s1(WBData) , .s2(EXDAta) , .s(src1) , .out(mux1));
-       MUX32in3 mx2(.s0(rg2) , .s1(WBData) , .s2(EXDAta) , .s(src2) , .out(mux2));
+       MUX32in3 mx1(.s0(rg1) , .s2(WBData) , .s1(EXDAta) , .s(src1) , .out(mux1));
+       MUX32in3 mx2(.s0(rg2) , .s2(WBData) , .s1(EXDAta) , .s(src2) , .out(mux2));
        MUX32 mx3(.s0(mux2) , .s1(immVal) , .s(AluSrc) , .out(mux3));
        MUX5 mx4(.s0(Rg1) , .s1(Rg2) , .s(RegDst) , .out(Rg));
        
