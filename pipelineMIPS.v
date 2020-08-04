@@ -1,6 +1,6 @@
 module MIPS(input rst, clk);
        
-       wire flush, jmp, PcSrc, PcWrite, write, WrReg, Brancheq, Branchneq, zeroCntrl;
+       wire flush, jmp, PcSrc, PcWrite, write, Brancheq, Branchneq, zeroCntrl;
        wire AluSrcEX, RegDstEX, MemWrEX, MemRdEX, DataSrcEX, WrRegEX, WrRegWB, DataSrcWB;
        wire MemRdMEM, MemWrMEM, WrRegMEM, DataSrcMEM;
        wire DataSrcCU, regDstCU, regWriteCU, AluSrcCU, MemWriteCU, MemReadCU;
@@ -16,7 +16,7 @@ module MIPS(input rst, clk);
        
        IFandID ifandid(.rst(rst), .clk(clk), .write(write), .nextInstAdr(nextInstAdrOut), .ir(ir), .adrParIn(nextInstAdr), .instParIn(Inst));
 
-       ID id(.clk(clk), .rst(rst), .WrReg(WrReg), .Brancheq(Brancheq), .Branchneq(Branchneq), .IR(ir), .nextInst(nextInstAdrOut), .wd(WBData), .wr(MEMWBrd),
+       ID id(.clk(clk), .rst(rst), .WrReg(WrRegWB), .Brancheq(Brancheq), .Branchneq(Branchneq), .IR(ir), .nextInst(nextInstAdrOut), .wd(WBData), .wr(MEMWBrd),
 	      .PcSrc(PcSrc), .beqAdr(beqAdr), .jmpAdr(jmpAdr), .rdReg1(rdReg1), .rdReg2(rdReg2),
 	      .fwdReg1(fwdReg1), .fwdReg2(fwdReg2), .destReg(destReg), .immVal(immVal), .opcode(opcode), .func(func));
 	     
