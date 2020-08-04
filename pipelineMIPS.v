@@ -1,44 +1,55 @@
 module MIPS(input rst, clk);
        
-       wire flush, jump, PcSrc, pcWrite, write;
-       wire[31:0] beqAdr, Inst, nextInstAdr, nextInstAdrOut, ir;
+       wire flush, jmp, PcSrc, pcWrite, write, WrReg, Brancheq, Branchneq, zeroCntrl;
+       wire AluSrcEX, RegDstEX, MemWrEX, MemRdEX, DataSrcEX, WrRegEX, WrRegWB, DataSrcWB;
+       wire MemRdMEM, MemWrMEM, WrRegMEM, DataSrcMEM;
+       wire DataSrcCU, regDstCU, regWriteCU, AluSrcCU, MemWriteCU, MemReadCU;
+       wire InAluSrc, InRegDst, InMemWr, InMemRd, InDataSrc, InWrReg;
+       wire[31:0] beqAdr, Inst, nextInstAdr, nextInstAdrOut, ir, wd, wr, rdReg1, rdReg2, immVal, immVal2;
+       wire[31:0] rg1, rg2, WBData, MEMData, Data, Alures, dataOutMEM, ReadDataMEM, Data0WB, Data1WB;
        wire[25:0] jmpAdr;
+       wire[4:0] fwdReg1, fwdReg2, destReg, destReg2, rdRg1, rdRg2, Rg, DestRegMEM, MEMWBrd;
+       wire[5:0] opcode, func;
+       wire[2:0] AluOperation, InAluOperation, AluOperationCU;
+       wire[1:0] fwSrc1, fwSrc2;
+       IF iff(.rst(rst), .clk(clk), .flush(flush), .jmp(jmp), .PcSrc(PcSrc), .pcWrite(pcWrite), .beqAdr(beqAdr), .jmpAdr(jmpAdr), .nextInstAdr(nextInstAdr), .Inst(Inst));
        
-       IF(.rst(rst), .clk(clk), .flush(flush), .jmp(jmp), .PcSrc(PcSrc), .pcWrite(pcWrite), .beqAdr(beqAdr), .jmpAdr(jmpAdr), .nextInstAdr(nextInstAdr), .Inst(Inst));
-       
-       IFandID(.rst(rst), .clk(clk), .write(write), .nextInstAdr(nextInstAdrOut), .ir(ir), .adrParIn(nextInstAdr), .instParIn(Inst));
+       IFandID ifandid(.rst(rst), .clk(clk), .write(write), .nextInstAdr(nextInstAdrOut), .ir(ir), .adrParIn(nextInstAdr), .instParIn(Inst));
 
-       ID(input clk,rst,WrReg,Brancheq,Branchneq,input[31:0] IR,input[31:0] nextInst,input[31:0] wd,input[4:0] wr,
-	     output PcSrc,output[31:0] beqAdr,output[25:0] jmpAdr,output[31:0] rdReg1,output[31:0] rdReg2,
-	     output[4:0] fwdReg1,output[4:0] fwdReg2,output[4:0] destReg,output[31:0] immVal,output[5:0] opcode,output[5:0] func);
+       ID id(.clk(clk), .rst(rst), .WrReg(WrReg), .Brancheq(Brancheq), .Branchneq(Branchneq), .IR(ir), .nextInst(nextInstAdrOut), .wd(wd), .wr(wr),
+	      .PcSrc(PcSrc), .beqAdr(beqAdr), .jmpAdr(jmpAdr), .rdReg1(rdReg1), .rdReg2(rdReg2),
+	      .fwdReg1(fwdReg1), .fwdReg2(fwdReg2), .destReg(destReg), .immVal(immVal), .opcode(opcode), .func(func));
 	     
+	     assign {InAluOperation, InAluSrc, InRegDst, InMemWr, InMemRd, InDataSrc, InWrReg} = {AluOperationCU, AluSrcCU, regDstCU, MemWriteCU, MemReadCU, DataSrcCU, regWriteCU} ? zeroCntrl : 9'b0;
 	     
-       IDandEX(input clk,rst,output reg[31:0] rg1,output reg[31:0] rg2,output reg[31:0] immVal,output reg[4:0] destReg,output reg[4:0] rdRg1, output reg[4:0] rdRg2,
-	     output reg[2:0] AluOperation,output reg AluSrc,RegDst,MemWr,MemRd,DataSrc,WrReg,
-	     input[31:0] Inrg1,input[31:0] Inrg2,input[31:0] InimmVal,input[4:0] IndestReg,input[4:0] InrdRg1, input[4:0] InrdRg2,
-	     input[2:0] InAluOperation,input InAluSrc,InRegDst,InMemWr,InMemRd,InDataSrc,InWrReg);
+       IDandEX idandex(.clk(clk), .rst(rst), .rg1(rg1), .rg2(rg2), .immVal(immVal2), .destReg(destReg2), .rdRg1(rdRg1), .rdRg2(rdRg2),
+	     .AluOperation(AluOperation), .AluSrc(AluSrcEX), .RegDst(RegDstEX), .MemWr(MemWrEX), .MemRd(MemRdEX), .DataSrc(DataSrcEX), .WrReg(WrRegEX),
+	     .Inrg1(rdReg1), .Inrg2(rdReg2), .InimmVal(immVal), .IndestReg(destReg), .InrdRg1(fwdReg1), .InrdRg2(fwdReg2),
+	     .InAluOperation(InAluOperation), .InAluSrc(InAluSrc), .InRegDst(InRegDst), .InMemWr(InMemWr), .InMemRd(InMemRd), .InDataSrc(InDataSrc), .InWrReg(InWrReg));
 
-       EX(input[2:0] AluOperation, input[31:0] rg1, input[31:0] rg2, input[31:0] immVal, input[31:0] WBData, input[31:0] EXData, input[1:0] src1, src2, 
-       input AluSrc, RegDst, input[4:0] Rg1, Rg2,
-       output[31:0] Alures, Data, output[4:0] Rg);
+       EX ex(.AluOperation(AluOperation), .rg1(rg1), .rg2(rg2), .immVal(immVal2), .WBData(WBData), .MEMData(MEMData), .src1(fwSrc1), .src2(fwSrc2), 
+       .AluSrc(AluSrcEX), .RegDst(RegDstEX), .Rg1(rdRg2), .Rg2(destReg2),
+       .Alures(Alures), .Data(Data), .Rg(Rg));
               
-       EXandMEM(input clk, rst,input[31:0] ALUres, input[31:0] data, input[4:0] InputDestReg, input InputMemRd, InputMemWr, InputWrReg, InputDataSrc,
-       output reg [31:0]ALUresOut, output reg [31:0] Data, output reg[4:0] DestReg, output reg  MemRd, MemWr, WrReg, DataSrc);
+       EXandMEM exandmem(.clk(clk), .rst(rst), .ALUres(Alures), .data(Data), .InputDestReg(Rg), .InputMemRd(MemRdEX), .InputMemWr(MemWrEX), .InputWrReg(WrRegEX), .InputDataSrc(DataSrcEX),
+       .ALUresOut(MEMData), .Data(dataOutMEM), .DestReg(DestRegMEM), .MemRd(MemRdMEM), .MemWr(MemWrMEM), .WrReg(WrRegMEM), .DataSrc(DataSrcMEM));
        
-       Memory(input clk, MemRead , MemWrite, rst,input [31:0]writeData, input[31:0]Address, output[31:0] ReadData);
+       Memory memory(.clk(clk), .MemRead(MemRdMEM) , .MemWrite(MemWrMEM), .rst(rst), .writeData(dataOutMEM), .Address(MEMData), .ReadData(ReadDataMEM));
 
-       MEMandWB(input clk, rst, input[31:0] data,input[31:0] ALUres, input InputWrReg, InputDataSrc, input[4:0] InputDestReg,
-       output reg [31:0]ALUresOut, output reg [31:0] Data, output reg[4:0] DestReg, output reg WrReg, DataSrc);
+       MEMandWB memandwb(.clk(clk), .rst(rst), .data(ReadDataMEM), .ALUres(MEMData), .InputWrReg(WrRegMEM), .InputDataSrc(DataSrcMEM), .InputDestReg(DestRegMEM),
+       .ALUresOut(Data0WB), .Data(Data1WB), .DestReg(MEMWBrd), .WrReg(WrRegWB), .DataSrc(DataSrcWB));
        
        
-       WB(input[31:0] data,input[31:0] ALUres, input DataSrc, output [31:0]Data);
+       WB wb(.data(Data1WB), .ALUres(Data0WB), .DataSrc(DataSrcWB), .Data(WBData));
 
 
-       HazardUnit(input PcSrc,Jmp,memRd,input[4:0] rg1,input[4:0] rg2,input[4:0] rgDstNxt,output reg zeroCntrl,PcWrite,IRWrite,flush);
+       HazardUnit hu(.PcSrc(PcSrc), .Jmp(jmp), .memRd(MemRead), .rg1(fwdReg1), .rg2(fwdReg2), .rgDstNxt(rdRg2), .zeroCntrl(zeroCntrl), .PcWrite(PcWrite), .IRWrite(write), .flush(flush));
        
-       ForwardingUnit(input EXMEMregWr, EXMEMrd, input IDEXrs, IDEXrt, input MEMWBregWr, MEMWBrd,
-       output[1:0] src1, src2);
+       ForwardingUnit fw(.EXMEMregWr(WrRegMEM), .EXMEMrd(DestRegMEM), .IDEXrs(rdRg1), .IDEXrt(rdRg2), .MEMWBregWr(WrRegWB), .MEMWBrd(MEMWBrd),
+       .src1(fwSrc1), .src2(fwSrc2));
        
-       controlUnit(AluOperation, Jmp, Brancheq, Branchneq, DataSrc, regDst, regWrite, AluSrc, MemWrite, MemRead, func, opcode);
+       controlUnit cu(.AluOperation(AluOperationCU), .Jmp(jmp), .Brancheq(Brancheq), .Branchneq(Branchneq), 
+       .DataSrc(DataSrcCU), .regDst(regDstCU), .regWrite(regWriteCU), .AluSrc(AluSrcCU), .MemWrite(MemWriteCU), .MemRead(MemReadCU), 
+       .func(func), .opcode(opcode));
 
 endmodule
