@@ -19,9 +19,9 @@ module MIPS(input rst, clk);
        ID id(.clk(clk), .rst(rst), .WrReg(WrRegWB), .Brancheq(Brancheq), .Branchneq(Branchneq), .IR(ir), .nextInst(nextInstAdrOut), .wd(WBData), .wr(MEMWBrd),
 	      .PcSrc(PcSrc), .beqAdr(beqAdr), .jmpAdr(jmpAdr), .rdReg1(rdReg1), .rdReg2(rdReg2),
 	      .fwdReg1(fwdReg1), .fwdReg2(fwdReg2), .destReg(destReg), .immVal(immVal), .opcode(opcode), .func(func));
-	     
-	     assign {InAluOperation, InAluSrc, InRegDst, InMemWr, InMemRd, InDataSrc, InWrReg} = zeroCntrl ? {AluOperationCU, AluSrcCU, regDstCU, MemWriteCU, MemReadCU, DataSrcCU, regWriteCU}  : 9'b0;
-	     
+	     /**/
+	     assign {InAluOperation, InAluSrc, InRegDst, InMemWr, InMemRd, InDataSrc, InWrReg} = zeroCntrl ? 9'b0: {AluOperationCU, AluSrcCU, regDstCU, MemWriteCU, MemReadCU, DataSrcCU, regWriteCU};
+       /**/	     
        IDandEX idandex(.clk(clk), .rst(rst), .rg1(rg1), .rg2(rg2), .immVal(immVal2), .destReg(destReg2), .rdRg1(rdRg1), .rdRg2(rdRg2),
 	     .AluOperation(AluOperation), .AluSrc(AluSrcEX), .RegDst(RegDstEX), .MemWr(MemWrEX), .MemRd(MemRdEX), .DataSrc(DataSrcEX), .WrReg(WrRegEX),
 	     .Inrg1(rdReg1), .Inrg2(rdReg2), .InimmVal(immVal), .IndestReg(destReg), .InrdRg1(fwdReg1), .InrdRg2(fwdReg2),
