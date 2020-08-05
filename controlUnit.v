@@ -7,7 +7,7 @@ module CUcenter(AluOp,Jmp, Brancheq, Branchneq, DataSrc, regDst, regWrite, AluSr
   always@(opcode , func)begin
     {AluOp,Jmp, Brancheq, Branchneq, DataSrc, regDst, regWrite, AluSrc, MemWrite, MemRead} = 11'b0;
     case(opcode)
-      6'b000000:begin if(func != 6'b0) {DataSrc,regDst, regWrite, AluOp} = 5'b11110; end
+      6'b000000:begin if(func != 6'b0) {DataSrc,regDst, regWrite, AluOp} = 5'b01110; end
       6'b100011:{regWrite, AluSrc, MemRead} = 3'b111;
       6'b101011:{AluSrc, MemWrite} = 2'b11;
       6'b001000:{regWrite, AluSrc} = 2'b11;
