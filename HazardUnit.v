@@ -14,8 +14,7 @@ module HazardUnit(input PcSrc,Jmp,branch,memRd, EXMEMzerocntrl,input[4:0] rg1,in
 			PcWrite <= 1'b0;
 			IRWrite <= 1'b0;
 		end else if(ifFlush) flush <= 1'b1;
-		else
-		if(memRd && (rgRtNxt != 5'b0) && ((rgRtNxt == rg1) || (rgRtNxt == rg2)) ) begin
+		else if(memRd && (rgRtNxt != 5'b0) && ((rgRtNxt == rg1) || (rgRtNxt == rg2)) ) begin
 			zeroCntrl <= 1'b1;
 			PcWrite <= 1'b0;
 			IRWrite <= 1'b0;	
