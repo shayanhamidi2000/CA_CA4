@@ -6,7 +6,7 @@ module MIPS(input rst, clk);
        wire DataSrcCU, regDstCU, regWriteCU, AluSrcCU, MemWriteCU, MemReadCU;
        wire InAluSrc, InRegDst, InMemWr, InMemRd, InDataSrc, InWrReg;
        wire forwardD, forwardC;
-       wire branch;
+       wire branch, EXMEMzerocntrl;
        wire[31:0] beqAdr, Inst, nextInstAdr, nextInstAdrOut, ir, rdReg1, rdReg2, immVal, immVal2;
        wire[31:0] rg1, rg2, WBData, MEMData, Data, Alures, dataOutMEM, ReadDataMEM, Data0WB, Data1WB;
        wire[25:0] jmpAdr;
@@ -30,8 +30,9 @@ module MIPS(input rst, clk);
        IDandEX idandex(.clk(clk), .rst(rst), .rg1(rg1), .rg2(rg2), .immVal(immVal2), .destReg(destReg2), .rdRg1(rdRg1), .rdRg2(rdRg2),
 	     .AluOperation(AluOperation), .AluSrc(AluSrcEX), .RegDst(RegDstEX), .MemWr(MemWrEX), .MemRd(MemRdEX), .DataSrc(DataSrcEX), .WrReg(WrRegEX),
 	     .Inrg1(rdReg1), .Inrg2(rdReg2), .InimmVal(immVal), .IndestReg(destReg), .InrdRg1(fwdReg1), .InrdRg2(fwdReg2),
-	     .InAluOperation(InAluOperation), .InAluSrc(InAluSrc), .InRegDst(InRegDst), .InMemWr(InMemWr), .InMemRd(InMemRd), .InDataSrc(InDataSrc), .InWrReg(InWrReg));
-
+	     .InAluOperation(InAluOperation), .InAluSrc(InAluSrc), .InRegDst(InRegDst), .InMemWr(InMemWr), .InMemRd(InMemRd), .InDataSrc(InDataSrc), .InWrReg(InWrReg),
+	     .zerocntrl(zeroCntrl), .EXMEMzerocntrl(EXMEMzerocntrl));
+       /***/
        EX ex(.AluOperation(AluOperation), .rg1(rg1), .rg2(rg2), .immVal(immVal2), .WBData(WBData), .MEMData(MEMData), .src1(fwSrc1), .src2(fwSrc2), 
        .AluSrc(AluSrcEX), .RegDst(RegDstEX), .Rg1(rdRg2), .Rg2(destReg2),
        .Alures(Alures), .Data(Data), .Rg(Rg));
@@ -48,10 +49,11 @@ module MIPS(input rst, clk);
        WB wb(.data(Data1WB), .ALUres(Data0WB), .DataSrc(DataSrcWB), .Data(WBData));
 
 
-       HazardUnit hu(.branch(branch) ,.PcSrc(PcSrc), .Jmp(jmp), .memRd(MemRdEX), .rg1(fwdReg1), .rg2(fwdReg2), .rgDstNxt(rdRg2), .zeroCntrl(zeroCntrl), .PcWrite(PcWrite), .IRWrite(write), .flush(flush));
+       HazardUnit hu(.branch(branch) ,.PcSrc(PcSrc), .Jmp(jmp), .memRd(MemRdEX), .rg1(fwdReg1), .rg2(fwdReg2), .rgRtNxt(rdRg2), .rgDstNxt(destReg2), .zeroCntrl(zeroCntrl), 
+       .PcWrite(PcWrite), .IRWrite(write), .flush(flush), .EXMEMzerocntrl(EXMEMzerocntrl));
        
        ForwardingUnit fw(.EXMEMregWr(WrRegMEM), .EXMEMrd(DestRegMEM), .IDEXrs(rdRg1), .IDEXrt(rdRg2), .MEMWBregWr(WrRegWB), .MEMWBrd(MEMWBrd),
-       /**/.branch(branch), .IFIDrs(fwdReg1), .IFIDrt(fwdReg1), .forwardC(forwardC), .forwardD(forwardD),/**/
+       /**/.branch(branch), .IFIDrs(fwdReg1), .IFIDrt(fwdReg2), .forwardC(forwardC), .forwardD(forwardD),/**/
        .src1(fwSrc1), .src2(fwSrc2));
        
        controlUnit cu(.AluOperation(AluOperationCU), .Jmp(jmp), .Brancheq(Brancheq), .Branchneq(Branchneq), 
