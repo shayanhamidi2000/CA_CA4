@@ -9,7 +9,7 @@ module TB();
     clk = 1'b0;
     rst = 1'b0;
     #1500
-    repeat(500) #150 clk = ~clk;
+    repeat(2000) #150 clk = ~clk;
     
   end
 endmodule

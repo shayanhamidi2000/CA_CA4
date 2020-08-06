@@ -6,7 +6,7 @@ module Memory(input clk, MemRead , MemWrite, rst,input [31:0]writeData, input[31
       		$readmemh("./data.hex",mem,250);
 		$monitor(mem[500],mem[501]);
 	end
-	assign ReadData = MemRead ? mem[Address[31:2]] : 32'bZ;	
+	assign ReadData = MemRead ? mem[Address[31:2]] : 32'bZ;
 	always @(posedge clk , posedge rst)begin
     		if(rst)begin
 			for(counter = 0;counter < 4096;counter = counter + 1)

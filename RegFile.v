@@ -3,7 +3,7 @@ module RegFile(input[4:0] r1,input[4:0] r2,input[4:0] rw,input clk,rst,regWrite,
 	integer counter;
 	assign rd1 = Reg[r1];
 	assign rd2 = Reg[r2];
-	always@(posedge clk,posedge rst) begin
+	always@(negedge clk,posedge rst) begin
 		if(rst) begin
 			for(counter = 0;counter < 32;counter = counter + 1)
 				Reg[counter] <= 32'b0;
