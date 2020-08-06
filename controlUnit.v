@@ -5,16 +5,16 @@ module CUcenter(AluOp,Jmp, Brancheq, Branchneq, DataSrc, regDst, regWrite, AluSr
   input[5:0] func;
   
   always@(opcode , func)begin
-    {AluOp,Jmp, Brancheq, Branchneq, DataSrc, regDst, regWrite, AluSrc, MemWrite, MemRead} <= 11'b0;
+    {AluOp,Jmp, Brancheq, Branchneq, DataSrc, regDst, regWrite, AluSrc, MemWrite, MemRead} = 11'b0;
     case(opcode)
-      6'b000000:begin if(func != 6'b0) {regDst, regWrite, AluOp} <= 4'b1110; end
-      6'b100011:{DataSrc, regWrite, AluSrc, MemRead} <= 4'b1111;
-      6'b101011:{AluSrc, MemWrite} <= 2'b11;
-      6'b001000:{regWrite, AluSrc} <= 2'b11;
-      6'b001100:{regWrite, AluSrc, AluOp} <= 4'b1111;
-      6'b000010:Jmp <= 1'b1;
-      6'b000100:{Brancheq, AluOp} <= 3'b101;
-      6'b000101:{Branchneq, AluOp} <= 3'b101;
+      6'b000000:begin if(func != 6'b0) {regDst, regWrite, AluOp} = 4'b1110; end
+      6'b100011:{DataSrc, regWrite, AluSrc, MemRead} = 4'b1111;
+      6'b101011:{AluSrc, MemWrite} = 2'b11;
+      6'b001000:{regWrite, AluSrc} = 2'b11;
+      6'b001100:{regWrite, AluSrc, AluOp} = 4'b1111;
+      6'b000010:Jmp = 1'b1;
+      6'b000100:{Brancheq, AluOp} = 3'b101;
+      6'b000101:{Branchneq, AluOp} = 3'b101;
     endcase
   end 
 endmodule
@@ -25,18 +25,18 @@ module ALUcontroller(AluOp, func, AluOperation);
   output reg [2:0] AluOperation;
   
   always@(AluOp, func) begin
-    AluOperation <= 3'b000;
+    AluOperation = 3'b000;
     case(AluOp)
-      2'b00: AluOperation <= 3'b010;
-      2'b01: AluOperation <= 3'b110;
+      2'b00: AluOperation = 3'b010;
+      2'b01: AluOperation = 3'b110;
       2'b10: begin
-              if( func == 6'b100000) AluOperation <= 3'b010;
-              if( func == 6'b100010) AluOperation <= 3'b110;
-              if( func == 6'b100100) AluOperation <= 3'b000;
-              if( func == 6'b100101) AluOperation <= 3'b001;
-              if( func == 6'b101010) AluOperation <= 3'b111;
+              if( func == 6'b100000) AluOperation = 3'b010;
+              if( func == 6'b100010) AluOperation = 3'b110;
+              if( func == 6'b100100) AluOperation = 3'b000;
+              if( func == 6'b100101) AluOperation = 3'b001;
+              if( func == 6'b101010) AluOperation = 3'b111;
              end
-      2'b11: AluOperation <= 3'b000;
+      2'b11: AluOperation = 3'b000;
     endcase
   end
 endmodule
