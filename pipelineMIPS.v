@@ -5,6 +5,7 @@ module MIPS(input rst, clk);
        wire MemRdMEM, MemWrMEM, WrRegMEM, DataSrcMEM;
        wire DataSrcCU, regDstCU, regWriteCU, AluSrcCU, MemWriteCU, MemReadCU;
        wire InAluSrc, InRegDst, InMemWr, InMemRd, InDataSrc, InWrReg;
+       wire forwardD, forwardC;
        wire[31:0] beqAdr, Inst, nextInstAdr, nextInstAdrOut, ir, rdReg1, rdReg2, immVal, immVal2;
        wire[31:0] rg1, rg2, WBData, MEMData, Data, Alures, dataOutMEM, ReadDataMEM, Data0WB, Data1WB;
        wire[25:0] jmpAdr;
@@ -17,11 +18,12 @@ module MIPS(input rst, clk);
        IFandID ifandid(.rst(rst), .clk(clk), .write(write), .nextInstAdr(nextInstAdrOut), .ir(ir), .adrParIn(nextInstAdr), .instParIn(Inst));
 
        ID id(.clk(clk), .rst(rst), .WrReg(WrRegWB), .Brancheq(Brancheq), .Branchneq(Branchneq), .IR(ir), .nextInst(nextInstAdrOut), .wd(WBData), .wr(MEMWBrd),
+        /**/.forwardC(forwardC), .forwardD(forwardD), .MEMData(MEMData),/**/
 	      .PcSrc(PcSrc), .beqAdr(beqAdr), .jmpAdr(jmpAdr), .rdReg1(rdReg1), .rdReg2(rdReg2),
 	      .fwdReg1(fwdReg1), .fwdReg2(fwdReg2), .destReg(destReg), .immVal(immVal), .opcode(opcode), .func(func));
-	     /**/
+	     
 	     assign {InAluOperation, InAluSrc, InRegDst, InMemWr, InMemRd, InDataSrc, InWrReg} = zeroCntrl ? 9'b0: {AluOperationCU, AluSrcCU, regDstCU, MemWriteCU, MemReadCU, DataSrcCU, regWriteCU};
-       /**/	     
+           
        IDandEX idandex(.clk(clk), .rst(rst), .rg1(rg1), .rg2(rg2), .immVal(immVal2), .destReg(destReg2), .rdRg1(rdRg1), .rdRg2(rdRg2),
 	     .AluOperation(AluOperation), .AluSrc(AluSrcEX), .RegDst(RegDstEX), .MemWr(MemWrEX), .MemRd(MemRdEX), .DataSrc(DataSrcEX), .WrReg(WrRegEX),
 	     .Inrg1(rdReg1), .Inrg2(rdReg2), .InimmVal(immVal), .IndestReg(destReg), .InrdRg1(fwdReg1), .InrdRg2(fwdReg2),
@@ -46,6 +48,7 @@ module MIPS(input rst, clk);
        HazardUnit hu(.PcSrc(PcSrc), .Jmp(jmp), .memRd(MemRdEX), .rg1(fwdReg1), .rg2(fwdReg2), .rgDstNxt(rdRg2), .zeroCntrl(zeroCntrl), .PcWrite(PcWrite), .IRWrite(write), .flush(flush));
        
        ForwardingUnit fw(.EXMEMregWr(WrRegMEM), .EXMEMrd(DestRegMEM), .IDEXrs(rdRg1), .IDEXrt(rdRg2), .MEMWBregWr(WrRegWB), .MEMWBrd(MEMWBrd),
+       /**/.branch(Brancheq), .IFIDrs(fwdReg1), .IFIDrt(fwdReg1), .forwardC(forwardC), .forwardD(forwardD),/**/
        .src1(fwSrc1), .src2(fwSrc2));
        
        controlUnit cu(.AluOperation(AluOperationCU), .Jmp(jmp), .Brancheq(Brancheq), .Branchneq(Branchneq), 
