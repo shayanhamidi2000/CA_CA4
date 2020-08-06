@@ -1,0 +1,556 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/poonbaki/altera/15.0/modelsim_ase/bin
+vALU
+Z0 !s110 1596740079
+!i10b 1
+!s100 `9H=o45LjN0_Gd<jWIMeL3
+IhMMm>14:_;@m^1V_ljzI`3
+Z1 V`JN@9S9cnhjKRR_L]QIcM3
+Z2 d/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr
+Z3 w1596630186
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/ALU.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/ALU.v
+L0 1
+Z4 OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1596740079.396449
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/ALU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/ALU.v|
+!i113 1
+Z5 o-work work
+n@a@l@u
+vALUcontroller
+R0
+!i10b 1
+!s100 3KMEA235Hlbb6Za1C<elS3
+I3JO1RO]45CfH=gX;bSd372
+R1
+R2
+Z6 w1596731170
+Z7 8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/controlUnit.v
+Z8 F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/controlUnit.v
+L0 22
+R4
+r1
+!s85 0
+31
+Z9 !s108 1596740079.430879
+Z10 !s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/controlUnit.v|
+Z11 !s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/controlUnit.v|
+!i113 1
+R5
+n@a@l@ucontroller
+vcontrolUnit
+R0
+!i10b 1
+!s100 KB48n:YUk;J_Q2836]oM60
+IMF5]5b`B56mhfjZAKE_1X0
+R1
+R2
+R6
+R7
+R8
+L0 44
+R4
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R5
+ncontrol@unit
+vCUcenter
+R0
+!i10b 1
+!s100 b;0O;e4788]b9]N0e01z50
+IYIYjBd73`BDO:?OYZz_=N1
+R1
+R2
+R6
+R7
+R8
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R5
+n@c@ucenter
+vEX
+R0
+!i10b 1
+!s100 G1f>7``<NVSPmf9=6=[<I0
+INk:2Z:SXl5[Mfo>oKVW>M1
+R1
+R2
+R3
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/EX.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/EX.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740079.496399
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/EX.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/EX.v|
+!i113 1
+R5
+n@e@x
+vEXandMEM
+R0
+!i10b 1
+!s100 f]`i6zXO8Xbo2]HDW:45J2
+IE<lDTiY;ZecXk<lligz5R1
+R1
+R2
+R3
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/EX&MEM.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/EX&MEM.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740079.465442
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/EX&MEM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/EX&MEM.v|
+!i113 1
+R5
+n@e@xand@m@e@m
+vForwardingUnit
+R0
+!i10b 1
+!s100 MXnI[PS>jM5NJ46GL026E3
+IegMl<A:clHMlj@bI8zE]M1
+R1
+R2
+Z12 w1596721937
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/forwarding.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/forwarding.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740079.528086
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/forwarding.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/forwarding.v|
+!i113 1
+R5
+n@forwarding@unit
+vHazardUnit
+R0
+!i10b 1
+!s100 f[KzeDicZcL:d]d?n^VIf3
+IkAY<`2k8VL[3aM8fAfKlg3
+R1
+R2
+w1596735858
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/HazardUnit.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/HazardUnit.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740079.559686
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/HazardUnit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/HazardUnit.v|
+!i113 1
+R5
+n@hazard@unit
+vID
+R0
+!i10b 1
+!s100 ^;>0m;HHH36HoFFTHkjfE0
+IP3W@ijE==<1@[1O6^JHJQ2
+R1
+R2
+R6
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/ID.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/ID.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740079.623079
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/ID.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/ID.v|
+!i113 1
+R5
+n@i@d
+vIDandEX
+R0
+!i10b 1
+!s100 9o;XZY08KJF@nQoIeP[e32
+I]7mJ6<JzJ_PJbm4c@3la^0
+R1
+R2
+R12
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/ID&EX.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/ID&EX.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740079.591568
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/ID&EX.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/ID&EX.v|
+!i113 1
+R5
+n@i@dand@e@x
+vIF
+R0
+!i10b 1
+!s100 jRcZX2U635PFMkJ=5DU^k2
+INdDz6o1dM?DOKfc2V7JcR0
+R1
+R2
+R3
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/IF.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/IF.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740079.691592
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/IF.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/IF.v|
+!i113 1
+R5
+n@i@f
+vIFandID
+R0
+!i10b 1
+!s100 jQ;KHXWg<T7T=]YF9mndd3
+IcbIjJ?Sb3NKU>nHB8a2dY3
+R1
+R2
+R3
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/IF&ID.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/IF&ID.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740079.657576
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/IF&ID.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/IF&ID.v|
+!i113 1
+R5
+n@i@fand@i@d
+vInstMem
+R0
+!i10b 1
+!s100 M@h_cUb]`4bNAa?izJ?cg3
+I<3LfVMnKXIdI^dE;9Oa6k0
+R1
+R2
+R3
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/InstMem.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/InstMem.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740079.723654
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/InstMem.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/InstMem.v|
+!i113 1
+R5
+n@inst@mem
+vMEMandWB
+R0
+!i10b 1
+!s100 I5E=K0]5eGmUPg^WHR?bf0
+ICQ8TA5C2TT=DVmGdaR^Je0
+R1
+R2
+R3
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MEMandWB.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MEMandWB.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740079.755251
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MEMandWB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MEMandWB.v|
+!i113 1
+R5
+n@m@e@mand@w@b
+vMemory
+R0
+!i10b 1
+!s100 c1FGHfEA`di5GJWF6kF@d1
+IHQG3lRG[4_nAb7hhn8M^^1
+R1
+R2
+Z13 w1596733344
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/Memory.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/Memory.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740079.787192
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/Memory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/Memory.v|
+!i113 1
+R5
+n@memory
+vMIPS
+R0
+!i10b 1
+!s100 >MlKK802BKB1WAgjj18jC0
+IQca_=kcm;:m?VW5i>GM?f3
+R1
+R2
+R12
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/pipelineMIPS.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/pipelineMIPS.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740079.954473
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/pipelineMIPS.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/pipelineMIPS.v|
+!i113 1
+R5
+n@m@i@p@s
+vMUX32
+R0
+!i10b 1
+!s100 0YlzT6WIBKZ`k<Sn@U5=S3
+IW5cW815A15=;ST1NDiofX2
+R1
+R2
+R3
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MUX32.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MUX32.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740079.853506
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MUX32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MUX32.v|
+!i113 1
+R5
+n@m@u@x32
+vMUX32in3
+R0
+!i10b 1
+!s100 NBA`Oka4DBNkI[imildJP1
+IzUh:<KE;UAS^_J1QZEUCa1
+R1
+R2
+R3
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MUX32in3.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MUX32in3.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740079.885187
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MUX32in3.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MUX32in3.v|
+!i113 1
+R5
+n@m@u@x32in3
+vMUX5
+R0
+!i10b 1
+!s100 8aF^N>Xm>n3dDLWb=_=Nn3
+I2;Ia3YEKLMC>CzUlT]3;E2
+R1
+R2
+R3
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MUX5.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MUX5.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740079.820487
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MUX5.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MUX5.v|
+!i113 1
+R5
+n@m@u@x5
+vPC
+R0
+!i10b 1
+!s100 CkdjBKUM`k]2jI9X7dknS3
+ICzL9`AW;UVSMjA6B5Xi[T0
+R1
+R2
+R3
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/PC.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/PC.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740079.920692
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/PC.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/PC.v|
+!i113 1
+R5
+n@p@c
+vRegFile
+R0
+!i10b 1
+!s100 DhRCl:1MBmW9inYmi3gWg0
+Iki`;BZ341DG_Z_gU5]ngm1
+R1
+R2
+R13
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/RegFile.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/RegFile.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740079.988661
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/RegFile.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/RegFile.v|
+!i113 1
+R5
+n@reg@file
+vShift2b26
+Z14 !s110 1596740080
+!i10b 1
+!s100 P@<gG>4Ifh6h:>NIb:=W53
+IThS;z^58`5zh45cQ@i@Lb2
+R1
+R2
+R3
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/Shift2b26.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/Shift2b26.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740080.020691
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/Shift2b26.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/Shift2b26.v|
+!i113 1
+R5
+n@shift2b26
+vShift2b32
+R14
+!i10b 1
+!s100 K0bjOX8IcY5ZV4a`ojDIg1
+I206:kPK5h:Ri9z2I0nnai1
+R1
+R2
+R3
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/Shift2b32.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/Shift2b32.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740080.055846
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/Shift2b32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/Shift2b32.v|
+!i113 1
+R5
+n@shift2b32
+vSignExt
+R14
+!i10b 1
+!s100 ZR@4BPiNM?3ZK=2@m4=nD1
+I_HbTde3J]64LMM814J@SE1
+R1
+R2
+R3
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/SignExt.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/SignExt.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740080.088038
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/SignExt.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/SignExt.v|
+!i113 1
+R5
+n@sign@ext
+vTB
+R14
+!i10b 1
+!s100 hAgzc5U4WdOjd3W8BQZP:3
+Ino<K9bzaNzXIHH2[BhY0e3
+R1
+R2
+w1596735878
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/TB.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/TB.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740080.120179
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/TB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/TB.v|
+!i113 1
+R5
+n@t@b
+vWB
+R14
+!i10b 1
+!s100 `YfCYQjGlTU>VHGMdj5SF1
+IJ70R65C2UhhZ:i]DH@U3W3
+R1
+R2
+R3
+8/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/WB.v
+F/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/WB.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1596740080.153718
+!s107 /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/WB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/WB.v|
+!i113 1
+R5
+n@w@b

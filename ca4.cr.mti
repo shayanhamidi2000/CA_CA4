@@ -1,0 +1,164 @@
+/media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/WB.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/WB.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module WB
+
+Top level modules:
+	WB
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MUX32in3.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MUX32in3.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module MUX32in3
+
+Top level modules:
+	MUX32in3
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/SignExt.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/SignExt.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module SignExt
+
+Top level modules:
+	SignExt
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/Shift2b26.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/Shift2b26.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module Shift2b26
+
+Top level modules:
+	Shift2b26
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/EX&MEM.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/EX&MEM.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module EXandMEM
+
+Top level modules:
+	EXandMEM
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/IF&ID.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/IF&ID.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module IFandID
+
+Top level modules:
+	IFandID
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/PC.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/PC.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module PC
+
+Top level modules:
+	PC
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MEMandWB.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MEMandWB.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module MEMandWB
+
+Top level modules:
+	MEMandWB
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/ID.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/ID.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module ID
+
+Top level modules:
+	ID
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/EX.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/EX.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module EX
+
+Top level modules:
+	EX
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/TB.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/TB.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module TB
+
+Top level modules:
+	TB
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/pipelineMIPS.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/pipelineMIPS.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module MIPS
+
+Top level modules:
+	MIPS
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/IF.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/IF.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module IF
+
+Top level modules:
+	IF
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MUX5.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MUX5.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module MUX5
+
+Top level modules:
+	MUX5
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MUX32.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/MUX32.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module MUX32
+
+Top level modules:
+	MUX32
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/Shift2b32.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/Shift2b32.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module Shift2b32
+
+Top level modules:
+	Shift2b32
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/Memory.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/Memory.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module Memory
+
+Top level modules:
+	Memory
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/controlUnit.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/controlUnit.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module CUcenter
+-- Compiling module ALUcontroller
+-- Compiling module controlUnit
+
+Top level modules:
+	controlUnit
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/ALU.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/ALU.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/forwarding.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/forwarding.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module ForwardingUnit
+
+Top level modules:
+	ForwardingUnit
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/InstMem.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/InstMem.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module InstMem
+
+Top level modules:
+	InstMem
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/RegFile.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/RegFile.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module RegFile
+
+Top level modules:
+	RegFile
+
+} {} {}} /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/ID&EX.v {1 {vlog -work work -stats=none /media/poonbaki/work/Documents/University-Courses/CA/CA/CA4/pr/ID&EX.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module IDandEX
+
+Top level modules:
+	IDandEX
+
+} {} {}}
