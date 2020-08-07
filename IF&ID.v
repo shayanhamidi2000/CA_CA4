@@ -3,10 +3,9 @@ module IFandID(input rst,clk,write,output reg[31:0] nextInstAdr ,output reg[31:0
 		if(rst) begin
 			nextInstAdr <= 32'b0;
 			ir <= 32'b0;
-		end else begin
+		end else if(write) begin
 			nextInstAdr <= adrParIn;
-			if(write) ir <= instParIn;
-			else ir <= ir;
+			 ir <= instParIn;
 		end
 	end
 endmodule
